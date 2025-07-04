@@ -1,0 +1,155 @@
+.circular-gauge {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #333;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 20px rgba(255, 170, 0, 0.2),
+    inset 0 0 20px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease;
+}
+
+.circular-gauge:hover {
+  box-shadow: 
+    0 0 30px rgba(255, 170, 0, 0.4),
+    inset 0 0 20px rgba(0, 0, 0, 0.8);
+  border-color: #ffaa00;
+}
+
+.circular-gauge svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.gauge-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.gauge-title {
+  font-size: 10px;
+  font-weight: bold;
+  color: #ffaa00;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  text-shadow: 0 0 10px rgba(255, 170, 0, 0.8);
+}
+
+.gauge-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.gauge-unit {
+  font-size: 8px;
+  color: #ccc;
+  margin-top: 1px;
+}
+
+/* Specific gauge styling - All blue like altitude gauge */
+.speed-gauge {
+  border-color: #2196F3;
+}
+
+.speed-gauge:hover {
+  border-color: #2196F3;
+  box-shadow: 
+    0 0 30px rgba(33, 150, 243, 0.4),
+    inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.speed-gauge .gauge-title {
+  color: #2196F3;
+  text-shadow: 0 0 10px rgba(33, 150, 243, 0.8);
+}
+
+.altitude-gauge {
+  border-color: #2196F3;
+}
+
+.altitude-gauge:hover {
+  border-color: #2196F3;
+  box-shadow: 
+    0 0 30px rgba(33, 150, 243, 0.4),
+    inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.altitude-gauge .gauge-title {
+  color: #2196F3;
+  text-shadow: 0 0 10px rgba(33, 150, 243, 0.8);
+}
+
+.vsi-gauge {
+  border-color: #2196F3;
+}
+
+.vsi-gauge:hover {
+  border-color: #2196F3;
+  box-shadow: 
+    0 0 30px rgba(33, 150, 243, 0.4),
+    inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.vsi-gauge .gauge-title {
+  color: #2196F3;
+  text-shadow: 0 0 10px rgba(33, 150, 243, 0.8);
+}
+
+.compass-gauge {
+  border-color: #2196F3;
+}
+
+.compass-gauge:hover {
+  border-color: #2196F3;
+  box-shadow: 
+    0 0 30px rgba(33, 150, 243, 0.4),
+    inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.compass-gauge .gauge-title {
+  color: #2196F3;
+  text-shadow: 0 0 10px rgba(33, 150, 243, 0.8);
+}
+
+/* Animation for needle movement */
+.circular-gauge svg g:last-of-type {
+  transition: transform 0.5s ease-out;
+}
+
+/* SVG text elements */
+.circular-gauge svg text {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .gauge-title {
+    font-size: 9px;
+  }
+  
+  .gauge-value {
+    font-size: 12px;
+  }
+  
+  .gauge-unit {
+    font-size: 7px;
+  }
+} 

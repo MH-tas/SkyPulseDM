@@ -1,0 +1,112 @@
+.model-3d-viewer {
+  position: relative;
+  border: 2px solid #3a4a5a;
+  border-top: 3px solid #2196F3;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: linear-gradient(135deg, #000811 0%, #0a1428 100%);
+}
+
+.model-3d-viewer::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #2196F3 50%, transparent 100%);
+  z-index: 10;
+}
+
+.model-3d-viewer canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.model-info {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  background: linear-gradient(135deg, rgba(26, 35, 50, 0.9) 0%, rgba(15, 20, 25, 0.9) 100%);
+  backdrop-filter: blur(6px);
+  border: 1px solid #2196F3;
+  border-left: 3px solid #2196F3;
+  padding: 8px 12px;
+  border-radius: 3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.model-info span {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #2196F3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(33, 150, 243, 0.6);
+}
+
+.model-info small {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  color: #7799dd;
+  margin-top: 2px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  opacity: 0.9;
+}
+
+/* Loading state */
+.model-3d-viewer.loading {
+  background: linear-gradient(135deg, #000811 0%, #0a1428 100%);
+}
+
+.model-3d-viewer.loading::after {
+  content: 'LOADING 3D MODEL...';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #2196F3;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(33, 150, 243, 0.8);
+  z-index: 10;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .model-info {
+    padding: 6px 8px;
+  }
+  
+  .model-info span {
+    font-size: 9px;
+  }
+  
+  .model-info small {
+    font-size: 7px;
+  }
+}
+
+/* Hover effects */
+.model-3d-viewer:hover {
+  border-color: #2196F3;
+  box-shadow: 
+    0 6px 25px rgba(33, 150, 243, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.model-3d-viewer:hover::before {
+  background: linear-gradient(90deg, transparent 0%, #2196F3 30%, #2196F3 70%, transparent 100%);
+} 
